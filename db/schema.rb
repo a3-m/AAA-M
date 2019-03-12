@@ -32,6 +32,15 @@ ActiveRecord::Schema.define(version: 2019_03_12_092558) do
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
+  create_table "likes", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "song_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["song_id"], name: "index_likes_on_song_id"
+    t.index ["user_id"], name: "index_likes_on_user_id"
+  end
+
   create_table "songs", force: :cascade do |t|
     t.string "title"
     t.string "artist"
@@ -58,6 +67,8 @@ ActiveRecord::Schema.define(version: 2019_03_12_092558) do
 
   add_foreign_key "comments", "songs"
   add_foreign_key "comments", "users"
+  add_foreign_key "likes", "songs"
+  add_foreign_key "likes", "users"
   add_foreign_key "songs", "catogries", column: "catogrie_id"
   add_foreign_key "songs", "users"
 end
