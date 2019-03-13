@@ -1,5 +1,7 @@
- require 'carrierwave/orm/activerecord'
-
+require 'carrierwave/orm/activerecord'
+require 'carrierwave/storage/abstract'
+require 'carrierwave/storage/file'
+require 'carrierwave/storage/fog'
 
  CarrierWave.configure do |config|
     if Rails.env.staging? || Rails.env.production?
