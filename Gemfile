@@ -5,7 +5,10 @@ ruby '2.6.1'
 
 gem 'carrierwave', '~> 0.10.0'
 gem 'mini_magick', '~> 4.3'
+<<<<<<< HEAD
 gem 'fog-aws'
+=======
+>>>>>>> refs/remotes/origin/development
 # Bootstrap
 gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails'
